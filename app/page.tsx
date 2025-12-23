@@ -5,23 +5,35 @@ export default function Home() {
     <main style={styles.main}>
       {/* HEADER */}
       <header style={styles.header}>
-        <Image
-          src="/logo1.png"
-          alt="Eatzo Logo"
-          width={120}
-          height={32}
-          priority
-          style={{ objectFit: "contain" }}
-        />
-
-        <a
-          href="https://instagram.com/eatzoofficial"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={styles.headerBtn}
-        >
-          Contact
+        <a href="/" style={styles.logoWrapper}>
+          <Image
+            src="/logo1.png"
+            alt="Eatzo Logo"
+            width={120}
+            height={32}
+            priority
+            style={{ objectFit: "contain" }}
+          />
         </a>
+
+        <nav style={styles.nav}>
+          <a href="/" style={styles.navLink}>
+            Home
+          </a>
+
+          <a href="/restaurants" style={styles.navLink}>
+            Restaurants
+          </a>
+
+          <a
+            href="https://instagram.com/eatzoofficial"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={styles.headerBtn}
+          >
+            Contact
+          </a>
+        </nav>
       </header>
 
       {/* HERO */}
@@ -64,6 +76,8 @@ export default function Home() {
   );
 }
 
+/* ===================== STYLES ===================== */
+
 const styles: { [key: string]: React.CSSProperties } = {
   main: {
     backgroundColor: "#0b0b0b",
@@ -80,6 +94,20 @@ const styles: { [key: string]: React.CSSProperties } = {
     alignItems: "center",
     padding: "20px 24px",
     borderBottom: "1px solid #1f1f1f",
+  },
+  logoWrapper: {
+    textDecoration: "none",
+  },
+  nav: {
+    display: "flex",
+    alignItems: "center",
+    gap: "20px",
+  },
+  navLink: {
+    textDecoration: "none",
+    color: "#ffffff",
+    opacity: 0.7,
+    fontSize: "0.95rem",
   },
   headerBtn: {
     border: "1px solid #ffffff",
